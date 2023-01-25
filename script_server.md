@@ -112,7 +112,7 @@ root@home:~#
 Connect to a Technicolor router (I have no example IP for this).
 
 ```console
-$ ssh -p 60022 -i rgwv2.id_rsa  tchroot@1.2.3.4
+$ ssh -p 60022 -i rgwv2.id_rsa  tchroot@78.69.125.42
 
 
 BusyBox v1.31.0 () built-in shell (ash)
@@ -152,11 +152,10 @@ The commands to verify are different for a Technicolor router.
 
 ```console
 root@OpenWrt:/home/tchroot# uci get env.var.serial
-CP1234567
+CP2026SAHTY
 root@OpenWrt:/home/tchroot# uci get wireless.wl1.ssid
-#Telia123456
+#Telia-E5DFA3
 root@OpenWrt:/home/tchroot# 
-
 ````
 
 
