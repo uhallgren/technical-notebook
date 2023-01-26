@@ -17,7 +17,13 @@ scp gdbserver Administrator@192.168.1.1://telia/lxc/teliaLxc/root/
 
 ## Configure VSCode
 
-The first step is to find the IP address of the container. In the container issue the following command.
+The first step is to find the IP address of the container. 
+
+```console
+lxc-info teliaLxc
+```
+
+It is also possible to check inside the container:
 
 ```console 
 root@teliaLxc:~# ip address
