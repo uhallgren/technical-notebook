@@ -34,6 +34,24 @@ Install Colima using brew.
 
 ## Configure and start 
 
+The configuration file, *~/.colima/default/colima.yaml*, will be opened with vi when the *--edit* option is given to the start command. The recommended changes are given below:
+
+    cpu: 6
+    disk: 60
+    memory: 6
+    forwardAgent: true
+    vmType: vz
+    mountType: virtiofs
+
+This gives better performance than using the *qemu*. The forwarding of the *ssh agent* makes it possible to perform *ssh* connections from the container. To take advantage of this you need to add your private key to the *ssh agent*. Add the following to your *.zprofile*.
+
+    # Add private key to ssh-agent.
+    # This is needed for Rust git references
+    ssh-add ~/.ssh/id_rsa
+
+It should now be possible to use *ssh* with the same identity as from the MacBook.
+To perform the above changes to the configuration start as below the first time.
+
     colima start --edit 
 
     docker compose versions
