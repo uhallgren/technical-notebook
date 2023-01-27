@@ -15,7 +15,8 @@ brew install awscli
 It is possible to configure *AWS CLI client* the hardway, as explained in some telia documentation, by using the 
 ```console
 aws sso configure
-```command
+```
+command
 
 The easy way, which is explained below, is to create the configuration file directly. This can be done by creating the **~/.aws/config** file manually.
 ```console 
