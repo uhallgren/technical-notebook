@@ -70,12 +70,13 @@ to your *.zprofile* file.
 ```shell
 # Using AWS ECR as a docker registry (connected-home-dev)
 export  registry="642976147714.dkr.ecr.eu-west-1.amazonaws.com"
-alias ecr_login='aws ecr get-login-password --profile dev | docker login --username AWS --password-stdin $registry'
+alias ecr_login='aws ecr get-login-password --profile dev | \
+    && docker login --username AWS --password-stdin $registry'
 alias ecr_ls='aws --profile dev ecr describe-repositories --query "repositories[*].repositoryName"'
-alias ecr_ls_tags='aws --profile dev ecr list-images --query "imageIds[*].imageTag"'
+alias ecr_ls_tags="aws --profile dev ecr list-images  --query 'imageIds[?imageTag!=``null``] | sort_by(@, &imageTag)[].imageTag' --repository-name"
 alias ecr_create='aws --profile dev ecr create-repository --repository-name'
 alias ecr_rm='aws --profile dev ecr delete-repository --repository-name'
-alias ecr_rm_tag=' aws --profile dev ecr batch-delete-image'
+alias ecr_rm_tags=' aws --profile dev ecr batch-delete-image --repository-name'
 ```
 
 # Usage
