@@ -63,6 +63,14 @@ prl167@DY4MH92QD1 ~ %
 ```
 You may wish to do the same for the other profiles as well, to verify that they are indeed working.
 
+## Avoid giving profile option
+
+It is possible to avoid using the "--profile dev" option for all commands. If you are working with the dev environment you may set an environment variable:
+
+```shell
+export AWS_PROFILE=dev
+```
+
 # Configure the shell
 
 The *registry* name is quite long and hard to remember by heart, so it is better to use environment variables and some alias. Add the following 
