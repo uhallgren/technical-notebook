@@ -34,10 +34,8 @@ The configuration file, *~/.colima/default/colima.yaml*, will be opened with vi 
     disk: 60
     memory: 6
     forwardAgent: true
-    vmType: vz
-    mountType: virtiofs
 
-This gives better performance than using the *qemu*. 
+The **vmType** *vz* and **mount type** *virtiofs* gives better performance than using the *qemu*, but are unstable. 
 
 The forwarding of the *ssh agent* makes it possible to perform *ssh* connections from the container. To take advantage of this you need to add your private key to the *ssh agent*. Add the following to your *.zprofile*.
 
