@@ -1,6 +1,6 @@
 # SSH timeout
 
-During development on the Sagemcom router, it is very annoying that you get automatically logged out. This can be avoided by changing the SSH access timeout to a greater value.
+During development on the Sagemcom router, it is very annoying that you get automatically logged out. This can be avoided by changing the SSH access timeout to a greater value. I'm not sure if any of these actually works...
 
 You may check which UserSessions that exists with
 ```console
